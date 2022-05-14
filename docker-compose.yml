@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+
+  nginx:
+    container_name: nginx
+    image: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./web:/usr/share/nginx/html
+
+  db:
+    container_name: db
+    image: mysql
+    volumes:
+      - ./data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: aom1234
